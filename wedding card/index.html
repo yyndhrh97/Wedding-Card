@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Audio</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url('YOUR_BACKGROUND_IMAGE_URL');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .play-button {
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 5px;
+            z-index: 1; /* Ensure the button is above other elements */
+        }
+        iframe {
+            display: none; /* Hide the iframe initially */
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0; /* Place it behind the button */
+        }
+    </style>
+</head>
+<body>
+    <button class="play-button" id="playButton">Buka</button>
+
+    <audio id="myAudio">
+        <source src="Barbie in The 12 Dancing Princesses Theme but the key keeps getting higher (Extended opening theme).mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <iframe id="canvaFrame" src="https://www.canva.com/design/DAGSyOG36HI/pxrZzCDlTAIrVq_VNhARvw/view?embed"></iframe>
+
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            const audio = document.getElementById('myAudio');
+            audio.play();
+
+            // Hide the play button
+            this.style.display = 'none';
+
+            // Show the Canva design in the iframe
+            document.getElementById('canvaFrame').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
+
