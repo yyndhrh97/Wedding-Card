@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,24 +8,26 @@
         body {
             margin: 0;
             height: 100vh;
+            background-image: url('YOUR_BACKGROUND_IMAGE_URL');
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             position: relative;
-            overflow: hidden; /* Prevent scrolling */
         }
         .play-button {
-            background-color: rgba(211, 218, 226, 0.8);
-            color: rgb(0, 0, 0);
+            background-color: rgba(0, 123, 255, 0.8);
+            color: white;
             border: none;
-            padding: 10px 25px;
+            padding: 15px 30px;
             cursor: pointer;
-            font-size: 15px;
+            font-size: 20px;
             border-radius: 5px;
             z-index: 1; /* Ensure the button is above other elements */
         }
-        video, iframe {
+        iframe {
+            display: none; /* Hide the iframe initially */
             width: 100%;
             height: 100%;
             border: none;
@@ -45,11 +46,7 @@
         Your browser does not support the audio tag.
     </audio>
 
-    <!-- Initial video -->
-    <video id="introVideo" src="Wedding Card 08.mp4" autoplay muted></video>
-
-    <!-- Preload the second Canva design -->
-    <iframe id="canvaFrame" src="https://www.canva.com/design/DAGSyOG36HI/pxrZzCDlTAIrVq_VNhARvw/view?embed" allowfullscreen style="display:none;"></iframe>
+    <iframe id="canvaFrame" src="https://www.canva.com/design/DAGSyOG36HI/pxrZzCDlTAIrVq_VNhARvw/view?embed"></iframe>
 
     <script>
         document.getElementById('playButton').addEventListener('click', function() {
@@ -59,13 +56,10 @@
             // Hide the play button
             this.style.display = 'none';
 
-            // Hide the video
-            document.getElementById('introVideo').style.display = 'none';
-
-            // Show the second Canva design in the iframe
-            const canvaFrame = document.getElementById('canvaFrame');
-            canvaFrame.style.display = 'block'; // Show the iframe
+            // Show the Canva design in the iframe
+            document.getElementById('canvaFrame').style.display = 'block';
         });
     </script>
 </body>
 </html>
+
