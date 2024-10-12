@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Audio</title>
+    <meta property="og:image" content="https://wedding-alyaa-qairil.vercel.app/walimatulurus.png" />
     <style>
         body {
             margin: 0;
-            height: 100vh;
+            height: 90vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             position: relative;
-            overflow: hidden; /* Prevent scrolling */
         }
         .play-button {
             background-color: rgba(211, 218, 226, 0.8);
@@ -24,7 +24,7 @@
             cursor: pointer;
             font-size: 15px;
             border-radius: 5px;
-            z-index: 1; /* Ensure the button is above other elements */
+            z-index: 2; /* Ensure the button is above other elements */
         }
         video, iframe {
             width: 100%;
@@ -41,7 +41,7 @@
     <button class="play-button" id="playButton">Buka</button>
 
     <audio id="myAudio">
-        <source src="Barbie in The 12 Dancing Princesses Theme but the key keeps getting higher (Extended opening theme).mp3" type="audio/mpeg">
+        <source src="Barbie 12 DP.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
     </audio>
 
@@ -49,7 +49,7 @@
     <video id="introVideo" src="Wedding Card 08.mp4" autoplay muted></video>
 
     <!-- Preload the second Canva design -->
-    <iframe id="canvaFrame" src="https://www.canva.com/design/DAGSyOG36HI/pxrZzCDlTAIrVq_VNhARvw/view?embed" allowfullscreen style="display:none;"></iframe>
+    <iframe id="canvaFrame" src="https://www.canva.com/design/DAGP_Q9rCAA/YjH2P7ICN1sQCJx4puK5Rw/view?embed" allowfullscreen style="display:none;"></iframe>
 
     <script>
         document.getElementById('playButton').addEventListener('click', function() {
@@ -69,3 +69,6 @@
     </script>
 </body>
 </html>
+
+
+
