@@ -41,7 +41,9 @@
             object-fit: cover; /* Ensure the image covers the area */
         }
         #canvaFrame {
-            display: none; /* Initially hidden */
+            visibility: hidden; /* Initially hidden */
+            max-width: 100%;
+            max-height: 100%;
         }
     </style>
 </head>
@@ -54,10 +56,10 @@
     </audio>
 
     <!-- Background image behind the button -->
-    <img id="backgroundImage" src="picture2.png" alt="Wedding background" />
+    <img id="backgroundImage" src="https://your-image-url.com/image.jpg" alt="Wedding background" />
 
     <!-- Second Canva design (initially hidden) -->
-    <iframe id="canvaFrame" src="https://www.canva.com/design/DAGP_Q9rCAA/YjH2P7ICN1sQCJx4puK5Rw/view?embed" allowfullscreen></iframe>
+    <iframe id="canvaFrame" src="https://www.canva.com/design/DAGP_XYZ123/AnotherCanvaDesign/view?embed" allowfullscreen></iframe>
 
     <script>
         document.getElementById('playButton').addEventListener('click', function() {
@@ -67,12 +69,12 @@
             // Hide the play button
             this.style.display = 'none';
 
-            // Optionally hide the background image or keep it visible
-            document.getElementById('backgroundImage').style.display = 'none'; // Uncomment to hide the image
+            // Optionally hide the background image
+            document.getElementById('backgroundImage').style.display = 'none'; // Uncomment if you want to hide it
 
             // Show the second Canva design in the iframe
             const canvaFrame = document.getElementById('canvaFrame');
-            canvaFrame.style.display = 'block'; // Show the second iframe
+            canvaFrame.style.visibility = 'visible'; // Change to visible
         });
     </script>
 </body>

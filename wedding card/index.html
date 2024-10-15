@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding of Alyaa & Qairil</title>
-    <meta property="og:image" content="https://wedding-alyaa-qairil.vercel.app/walimatulurus.png" />
+    <title>Walimatul Urus Alyaa & Qairil</title>
+    <meta property="og:image" content="https://walimatulurus-alyaadanqairil.vercel.app/walimatulurus.png" />
     <style>
         body {
             margin: 0;
@@ -42,7 +42,9 @@
             object-fit: cover; /* Ensure the image covers the area */
         }
         #canvaFrame {
-            display: none; /* Initially hidden */
+            visibility: hidden; /* Initially hidden */
+            max-width: 100%;
+            max-height: 100%;
         }
     </style>
 </head>
@@ -68,13 +70,14 @@
             // Hide the play button
             this.style.display = 'none';
 
-            // Optionally hide the background image or keep it visible
-            document.getElementById('backgroundImage').style.display = 'none'; // Uncomment to hide the image
+            // Optionally hide the background image
+            document.getElementById('backgroundImage').style.display = 'none'; // Uncomment if you want to hide it
 
             // Show the second Canva design in the iframe
             const canvaFrame = document.getElementById('canvaFrame');
-            canvaFrame.style.display = 'block'; // Show the second iframe
+            canvaFrame.style.visibility = 'visible'; // Change to visible
         });
     </script>
 </body>
 </html>
+
