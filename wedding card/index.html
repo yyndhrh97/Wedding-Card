@@ -4,52 +4,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Audio</title>
+    <title>Wedding of Alyaa & Qairil</title>
     <meta property="og:image" content="https://wedding-alyaa-qairil.vercel.app/walimatulurus.png" />
     <style>
         body {
             margin: 0;
-            height: 90vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             position: relative;
+            background-color: rgba(13, 18, 22);
         }
         .play-button {
             background-color: rgba(211, 218, 226, 0.8);
             color: rgb(0, 0, 0);
-            border: none;
+            border: none; 
             padding: 10px 25px;
             cursor: pointer;
             font-size: 15px;
             border-radius: 5px;
             z-index: 2; /* Ensure the button is above other elements */
+            transition: background-color 0.3s;
         }
-        video, iframe {
+        .play-button:hover {
+            background-color: rgba(180, 200, 220, 0.8);
+        }
+        iframe, img {
             width: 100%;
             height: 100%;
             border: none;
             position: absolute;
             top: 0;
             left: 0;
-            z-index: 0; /* Place it behind the button */
+            z-index: 0; /* Place both behind the button */
+            object-fit: cover; /* Ensure the image covers the area */
+        }
+        #canvaFrame {
+            display: none; /* Initially hidden */
         }
     </style>
 </head>
 <body>
-    <button class="play-button" id="playButton">Buka</button>
+    <button class="play-button" id="playButton" aria-label="Play wedding audio">Buka</button>
 
     <audio id="myAudio">
         <source src="Barbie 12 DP.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
     </audio>
 
-    <!-- Initial video -->
-    <video id="introVideo" src="Wedding Card 08.mp4" autoplay muted></video>
+    <!-- Background image behind the button -->
+    <img id="backgroundImage" src="picture2.png" alt="Wedding background" />
 
-    <!-- Preload the second Canva design -->
-    <iframe id="canvaFrame" src="https://www.canva.com/design/DAGP_Q9rCAA/YjH2P7ICN1sQCJx4puK5Rw/view?embed" allowfullscreen style="display:none;"></iframe>
+    <!-- Second Canva design (initially hidden) -->
+    <iframe id="canvaFrame" src="https://www.canva.com/design/DAGP_Q9rCAA/YjH2P7ICN1sQCJx4puK5Rw/view?embed" allowfullscreen></iframe>
 
     <script>
         document.getElementById('playButton').addEventListener('click', function() {
@@ -59,16 +68,13 @@
             // Hide the play button
             this.style.display = 'none';
 
-            // Hide the video
-            document.getElementById('introVideo').style.display = 'none';
+            // Optionally hide the background image or keep it visible
+            document.getElementById('backgroundImage').style.display = 'none'; // Uncomment to hide the image
 
             // Show the second Canva design in the iframe
             const canvaFrame = document.getElementById('canvaFrame');
-            canvaFrame.style.display = 'block'; // Show the iframe
+            canvaFrame.style.display = 'block'; // Show the second iframe
         });
     </script>
 </body>
 </html>
-
-
-
